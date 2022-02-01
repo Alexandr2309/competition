@@ -14,7 +14,11 @@ export let obj = {
             });
         } else{
             localStorage.setItem(num, num);
-            window.location.replace('../HTML/zoos.html');
+            if(window.location.href.includes('index.html')){
+                window.location.replace('HTML/zoos.html')
+            }else{
+                window.location.replace('../HTML/zoos.html');
+            }
         }
 },
 array : arrayF
