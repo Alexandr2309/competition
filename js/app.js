@@ -20,7 +20,11 @@ for(let elem of peopleUl){
          })
        } else{
            localStorage.setItem('scroll', elem.dataset.name);
-           window.location.href = '../HTML/People.html';
+        if(window.location.href.includes('index.html')){
+            window.location.replace('HTML/People.html')
+        }else{
+            window.location.href = '../HTML/People.html';
+        }
        }
     })
 }
