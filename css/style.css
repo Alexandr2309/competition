@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,600;0,700;0,800;0,900;1,500;1,600;1,700;1,800;1,900&display=swap");
-p, .zoos__block > *, .zoos__block p, .zoos__block blockquote, .wonders__text, .peoples ul, .peoples li, .btn {
+.btn, .peoples ul, .peoples li, .wonders__text, .zoos__block blockquote, .zoos__block p, .zoos__block > *, p {
   font-size: 17px;
   line-height: 1.5;
   font-family: Mulish;
@@ -15,6 +15,7 @@ p, .zoos__block > *, .zoos__block p, .zoos__block blockquote, .wonders__text, .p
 }
 
 *, *:before, *:after {
+  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -87,19 +88,13 @@ h1, h2, h3, h4, h5, h6 {
     display: none !important;
   }
 }
-
 @media (max-width: 1200px) {
   .wonders {
     background: #324851;
   }
   .wonders__block {
-    display: -webkit-box !important;
-    display: -ms-flexbox !important;
     display: flex !important;
-    -webkit-box-orient: vertical !important;
-    -webkit-box-direction: normal !important;
-        -ms-flex-direction: column !important;
-            flex-direction: column !important;
+    flex-direction: column !important;
   }
   .wonders__image {
     padding: 10px 0;
@@ -125,35 +120,35 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0.8rem !important;
   }
   .wonders__title h3 {
-    font-size: .95em !important;
+    font-size: 0.95em !important;
   }
   .hidden-xxl {
     display: none;
   }
 }
-
 @media (min-width: 1140px) {
   .footer {
     font-size: 20px;
   }
 }
-
 @media (min-width: 992px) {
   .nav-link {
     padding-right: 2rem;
     padding-left: 2rem;
   }
+
   .col-lg-6 {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 0 49%;
-            flex: 1 0 49%;
+    flex: 1 0 49%;
   }
+
   .footer {
     font-size: 18px;
   }
+
   .unhidden-lg {
     display: none;
   }
+
   .peoples h4, .peoples h5 {
     padding-left: 20px;
     font-size: 20px;
@@ -177,25 +172,15 @@ h1, h2, h3, h4, h5, h6 {
   }
   .peoples__images {
     max-height: 800px;
-    display: -ms-grid;
     display: grid;
-    -ms-grid-rows: (50%)[2];
-    -ms-grid-columns: (50%)[2];
-        grid-template: repeat(2, 50%)/repeat(2, 50%);
+    grid-template: repeat(2, 50%)/repeat(2, 50%);
   }
   .peoples__images-block {
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    justify-content: center;
+    align-items: center;
     z-index: 10;
-    -webkit-transition: all 1s ease-in 0s;
     transition: all 1s ease-in 0s;
   }
   .peoples__images-block img {
@@ -207,31 +192,22 @@ h1, h2, h3, h4, h5, h6 {
   }
   .peoples__images-block-full {
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    justify-content: center;
+    align-items: center;
     z-index: 10;
-    -webkit-transition: all 1s ease-in 0s;
     transition: all 1s ease-in 0s;
   }
   .peoples__btn {
     position: absolute;
     top: 50%;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     z-index: 9999;
     border-radius: 5px;
     color: #EAF9F9;
     background: #324851;
     padding: 1.2em;
-    -webkit-transition: all 1s linear 0s;
     transition: all 1s linear 0s;
     font-size: 20px;
     font-weight: 700;
@@ -252,55 +228,59 @@ h1, h2, h3, h4, h5, h6 {
     top: 10px;
     right: 10px;
     cursor: pointer !important;
-    -webkit-transition: opacity 1s ease-in 0s, translate 1s ease-in 0s,  -webkit-transform .5s ease 0s;
-    transition: opacity 1s ease-in 0s, translate 1s ease-in 0s,  -webkit-transform .5s ease 0s;
-    transition: opacity 1s ease-in 0s, translate 1s ease-in 0s,  transform .5s ease 0s;
-    transition: opacity 1s ease-in 0s, translate 1s ease-in 0s,  transform .5s ease 0s, -webkit-transform .5s ease 0s;
+    transition: opacity 1s ease-in 0s, translate 1s ease-in 0s, transform 0.5s ease 0s;
     background: transparent url("../img/closeBtn.png") center/1.5em auto no-repeat !important;
     color: #34675C;
   }
   .btn-close:hover {
-    -webkit-transform: rotate(135deg);
-            transform: rotate(135deg);
+    transform: rotate(135deg);
   }
 }
-
 @media (max-width: 991px) {
   .navbar-nav {
     padding-left: 10px;
   }
+
   .footer {
     font-size: 18px !important;
   }
+
   .hidden-lg {
     display: none !important;
   }
+
   .col-12 {
     height: 100%;
   }
+
   .history {
     background-color: #324851;
     color: #86AC41;
     font-size: 16px !important;
     line-height: 1.4;
   }
+
   .zoos__info blockquote {
     display: none !important;
   }
+
   p {
     font-size: 16px !important;
     line-height: 1.4;
     text-indent: 15px !important;
   }
+
   h2 {
     margin-bottom: 15px !important;
     font-size: 25px !important;
   }
+
   h4, h5 {
     padding-left: 15px !important;
     font-size: 18px !important;
     font-weight: 800;
   }
+
   .peoples h4, .peoples h5 {
     padding-left: 20px;
     font-size: 20px;
@@ -316,73 +296,65 @@ h1, h2, h3, h4, h5, h6 {
     background: #324851;
   }
   .peoples__images-lg {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-column-gap: 15px;
-            column-gap: 15px;
+    justify-content: center;
+    column-gap: 15px;
     min-height: 150px;
   }
   .peoples__images-block {
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
     z-index: 10;
     padding: 0 10px;
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 50%;
-            flex: 0 1 50%;
+    flex: 0 1 50%;
   }
   .peoples__images-block img {
     position: relative;
     display: block;
     max-width: 100%;
     height: auto;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
-  __info {
+
+  .__info {
     position: relative !important;
   }
 }
-
 @media (max-width: 576px) {
   .hidden-sm {
     display: none !important;
   }
+
   .about__my-card p {
     font-size: 14px !important;
     line-height: 1.3;
   }
+
   .history {
     background-color: #324851;
     color: #86AC41;
     font-size: 15px !important;
     line-height: 1.4;
   }
+
   p {
     font-size: 15px !important;
     line-height: 1.4;
     text-indent: 10px !important;
   }
+
   h2 {
     margin-bottom: 30px !important;
     font-size: 24px !important;
   }
+
   h4, h5 {
     padding-left: 10px !important;
     font-size: 18px !important;
     font-weight: 800;
   }
 }
-
 /* Переменные */
 /* MIXIN */
 /* Bootstrap замены */
@@ -413,14 +385,11 @@ button {
   z-index: 999;
   font-size: 20px;
 }
-
 .head .row .col img {
   width: 10%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   height: auto;
 }
-
 .head .container {
   padding-left: 0;
   padding-right: 0;
@@ -431,21 +400,18 @@ button {
   top: 0;
   left: 0;
 }
-
 .head__img img {
   width: 100%;
   height: 60vh;
   z-index: -1;
-  opacity: .7;
+  opacity: 0.7;
 }
 
 .navbar {
   background-color: #324851;
 }
-
 .navbar-nav {
-  -webkit-column-gap: 30px;
-          column-gap: 30px;
+  column-gap: 30px;
 }
 
 .nav-link {
@@ -460,16 +426,13 @@ button {
 .about__main {
   background-color: #324851 !important;
 }
-
 .about__main .row {
-  -webkit-column-gap: 10px;
-          column-gap: 10px;
+  column-gap: 10px;
   --bs-gutter-x: 1rem;
   --bs-gutter-y: 0.8rem;
   margin-right: 0 !important;
   margin-left: 0;
 }
-
 .about .card {
   padding: 1rem 1rem;
   font-size: 18px;
@@ -477,67 +440,53 @@ button {
   line-height: 1.333;
   border-radius: 15px;
 }
-
 .about .card h3 {
   font-size: 24px;
   font-weight: 800;
   color: #01AEF0;
 }
-
 .about .card h5 {
   font-size: 20px;
   color: black;
 }
-
 .about .card img {
   display: block;
   max-height: 415px;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
-
 .about .card-body {
   border-top: 1px solid #ffd9d9;
   background: #fff !important;
 }
-
 .about__my-card {
   background-color: #fff;
   margin-top: 20px;
   border-radius: 15px;
 }
-
 .about__my-card p {
-  -webkit-transition: all 0.3s ease-in-out 0s;
   transition: all 0.3s ease-in-out 0s;
 }
-
 .about__my-card p:hover {
-  -webkit-transform: translate(10px, 0px);
-          transform: translate(10px, 0px);
+  transform: translate(10px, 0px);
 }
-
 .about__my-card h2 {
   color: #34675C;
   font-size: 25px;
   font-weight: bold;
 }
-
 .about__my-card h3 {
   font-size: 24px;
   font-weight: 600;
   color: #34675C;
 }
-
 .about__my-card p {
   color: #34675C;
   font-size: 16px;
   font-weight: 500;
 }
-
 .about__my-card p::before {
-  content: '\2022';
+  content: "•";
   padding-right: 5px;
 }
 
@@ -549,79 +498,65 @@ button {
   font-family: Mulish;
   font-weight: 600;
 }
-
 .history h2 {
   text-align: center;
   font-size: 26px;
   color: #fff;
 }
-
 .history h4, .history h5 {
   padding-left: 20px;
   font-size: 20px;
   font-weight: 800;
 }
-
 .history__main-swiper {
   max-height: 500px;
   margin: 10px 0;
   padding: 10px 0;
 }
-
 .history__main-swiper .carousel-inner {
   border: 2px solid #fff;
 }
-
 .history__main-swiper img {
   width: 100%;
   max-height: 500px;
   min-height: 414px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   background-color: #7DA3A1;
 }
-
 .history__main-swiper-spec {
   margin: 10px 0;
   padding: 10px 0;
 }
-
 .history__main-swiper-spec img {
   width: 100%;
   max-height: 670px;
   background-color: #7DA3A1;
 }
-
 .history__main-photo {
   padding: 20px;
   text-align: center;
 }
-
 .history__main-photo img {
   max-width: 100%;
   border: 2px solid #fff;
   width: auto;
   max-height: 500px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 .zoos {
   background: #fff;
 }
-
 .zoos__head {
   position: relative;
   width: 100vw;
   height: 100vh;
   background: url("../img/zoos__head.jpg") 0 0/cover no-repeat fixed;
 }
-
 .zoos__info {
   padding: 0 2.5rem;
   margin: 2.5rem 0;
 }
-
 .zoos__title {
   display: inline-block;
   position: absolute;
@@ -636,50 +571,39 @@ button {
   -webkit-text-stroke-color: #000000;
   letter-spacing: 2px;
   line-height: 1.4;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
-
 .zoos__paralax {
   width: 100vw;
   height: 100vh;
 }
-
 .zoos__paralax1 {
   background: url("../img/Большехекцирский.jpg") 0 0/cover no-repeat fixed;
 }
-
 .zoos__paralax2 {
   background: url("../img/БолоньскийFixed.jpg") 0 0/cover no-repeat fixed;
 }
-
 .zoos__paralax3 {
   background: url("../img/БотчинскийFixed.jpg") 0 0/cover no-repeat fixed;
 }
-
 .zoos__paralax4 {
   background: url("../img/Джугджурский.jpg") 0 0/cover no-repeat fixed;
 }
-
 .zoos__paralax5 {
   background: url("../img/Комсомольский.jpg") 0 0/cover no-repeat fixed;
 }
-
 .zoos__paralax6 {
   background: url("../img/Буреинский.jpg") 0 0/cover no-repeat fixed;
 }
-
 .zoos__photo img {
   max-height: 300px;
 }
-
 .zoos__block h3 {
   font-weight: 800;
   color: #86AC41;
   font-size: 26px;
   margin-top: 50px;
 }
-
 .zoos__block h5 {
   font-size: 20px;
   font-weight: bold;
@@ -687,17 +611,14 @@ button {
   margin-left: 25px;
   color: #86AC41;
 }
-
 .zoos__block p {
   color: #324851;
   text-indent: 25px;
 }
-
 .zoos__block ul li {
   padding-top: 15px;
   padding-left: 15px;
 }
-
 .zoos__block blockquote {
   margin: 0;
   background: white;
@@ -709,9 +630,8 @@ button {
   font-family: Mulish;
   font-weight: 300;
 }
-
 .zoos__block blockquote:before {
-  content: "\201C";
+  content: "“";
   font-family: serif;
   position: absolute;
   left: 20px;
@@ -727,85 +647,62 @@ button {
 }
 
 .gallery {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-column-gap: 10px;
-          column-gap: 10px;
+  justify-content: center;
+  column-gap: 10px;
   row-gap: 10px;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
-
 .gallery-item {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
+  flex: 1 1 auto;
   outline: 1px solid #86AC41;
   max-height: 300px;
   min-height: 200px;
   max-width: 400px;
   position: relative;
 }
-
 .gallery-item img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
 }
 
 .wonders {
   background: #324851;
 }
-
 .wonders:last-child {
   margin-bottom: 30px;
   padding-bottom: 15px;
 }
-
 .wonders__block {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-rows: minmax(150px, auto);
-  -ms-grid-columns: 50% 50%;
-      grid-template: minmax(150px, auto)/50% 50%;
+  grid-template: minmax(150px, auto)/50% 50%;
 }
-
 .wonders__text {
   color: #86AC41;
   padding: 5px 15px;
 }
-
 .wonders__text p {
   margin-bottom: 0px;
   text-indent: 10px;
 }
-
 .wonders__text p:not(:last-child) {
   margin-bottom: 0.8rem !important;
 }
-
 .wonders__title {
   font-size: 1.6em;
 }
-
 .peoples h4, .peoples h5 {
   padding-left: 20px;
   font-size: 20px;
   font-weight: 800;
 }
-
 .peoples h3 {
   font-weight: 800;
   color: #86AC41;
   font-size: 26px;
 }
-
 .peoples__info {
   color: #86AC41;
 }
@@ -820,29 +717,24 @@ button {
 }
 
 .translate1 {
-  -webkit-transform: translate(-600px, -600px);
-          transform: translate(-600px, -600px);
+  transform: translate(-600px, -600px);
 }
 
 .translate2 {
-  -webkit-transform: translate(600px, -600px);
-          transform: translate(600px, -600px);
+  transform: translate(600px, -600px);
 }
 
 .translate3 {
-  -webkit-transform: translate(-600px, 600px);
-          transform: translate(-600px, 600px);
+  transform: translate(-600px, 600px);
 }
 
 .translate4 {
-  -webkit-transform: translate(600px, 600px);
-          transform: translate(600px, 600px);
+  transform: translate(600px, 600px);
 }
 
 .footer {
   color: #fff;
 }
-
 .footer .container, .footer .container-fluid {
   background-color: #324851;
 }
